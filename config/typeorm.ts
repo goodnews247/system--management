@@ -8,11 +8,11 @@ const configService = new ConfigService()
 
 export const dataSourceOptions: DataSourceOptions =({
     type:'postgres',
-    host:configService.get('HOST'),
-    port:configService.get<number>('PORT'),
-    username:'postgres',
-    password:'0108159030',
-    database:'system-management',
+    host:configService.get('DB_HOST'),
+    port:configService.get<number>('DB_PORT'),
+    username:configService.get<string>('DB_USERNAME'),
+    password:configService.get<string>('DB_PASSWORD'),
+    database:configService.get<string>('DB_NAME'),
     entities:['dist/**/*.entity.js'],
     migrations:['dist/config/migrations/*.js'],
     synchronize:false
